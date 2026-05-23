@@ -1,0 +1,99 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>隐私审计报告 - com.amazon.atozm</title>
+            <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+            <style>
+                body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; padding: 20px; color: #2c3e50; }
+                .container { max-width: 1200px; margin: 0 auto; }
+                .header { background: linear-gradient(135deg, #2c3e50, #3498db); color: white; padding: 30px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+                .header h1 { margin: 0; font-size: 24px; }
+                .card { background: white; border-radius: 12px; padding: 25px; margin-top: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+                .card h2 { margin-top: 0; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; font-size: 18px; color: #34495e; }
+                .tag { padding: 3px 8px; border-radius: 4px; font-size: 12px; color: white; font-weight: 500; }
+                .bg-red { background: #e74c3c; } .bg-blue { background: #3498db; } .bg-orange { background: #f39c12; } .bg-green { background: #2ecc71; } .bg-purple { background: #9b59b6; }
+                code { background: #f8f9fa; color: #c0392b; padding: 2px 5px; border-radius: 3px; font-family: Consolas, monospace; }
+                #graph-container { width: 100%; height: 600px; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <div>
+                        <h1>🛡️ 移动应用隐私合规审计报告</h1>
+                        <p style="opacity: 0.8; margin-top: 5px;">应用包名: com.amazon.atozm | 审计时间: 2026-01-25T21:41:38.588263</p>
+                    </div>
+                </div>
+
+                
+
+                <div class="card">
+                    <h2>📊 1. 静态风险分析 (Static Analysis)</h2>
+                    <p style="font-size:13px; color:gray;">分析 APK 文件申请的权限及硬编码的敏感信息。</p>
+                    <strong>申请权限:</strong>
+                    <div style='margin-bottom:15px;'><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.INTERNET <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.SYSTEM_ALERT_WINDOW <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.ACCESS_NETWORK_STATE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.device.crashmanager.permission.USE_CRASH_MANAGER <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #e74c3c; font-weight: bold;'>android.permission.CAMERA <span class='tag bg-blue'>高危权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #e74c3c; font-weight: bold;'>android.permission.RECORD_AUDIO <span class='tag bg-blue'>高危权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #e74c3c; font-weight: bold;'>android.permission.MODIFY_AUDIO_SETTINGS <span class='tag bg-blue'>高危权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.READ_EXTERNAL_STORAGE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.WRITE_EXTERNAL_STORAGE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #e74c3c; font-weight: bold;'>android.permission.ACCESS_FINE_LOCATION <span class='tag bg-blue'>高危权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #e74c3c; font-weight: bold;'>android.permission.ACCESS_COARSE_LOCATION <span class='tag bg-blue'>高危权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.WAKE_LOCK <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.VIBRATE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.BLUETOOTH <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.BLUETOOTH_ADMIN <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.RECEIVE_BOOT_COMPLETED <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.ACCESS_WIFI_STATE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.USE_BIOMETRIC <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.USE_FINGERPRINT <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.dcp.sso.permission.account.changed <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.dcp.sso.permission.MANAGE_COR_PFM <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.identity.auth.device.perm.AUTH_SDK <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.identity.permission.CALL_AMAZON_DEVICE_INFORMATION_PROVIDER <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.identity.permission.GENERIC_IPC <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.POST_NOTIFICATIONS <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.google.android.c2dm.permission.RECEIVE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.FOREGROUND_SERVICE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>amazon.permission.COLLECT_METRICS <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.dcp.metrics.permission.METRICS_PERMISSION <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.GET_ACCOUNTS <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.USE_CREDENTIALS <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.MANAGE_ACCOUNTS <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.AUTHENTICATE_ACCOUNTS <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #e74c3c; font-weight: bold;'>android.permission.READ_PHONE_STATE <span class='tag bg-blue'>高危权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>com.amazon.appmanager.preload.permission.READ_PRELOAD_DEVICE_INFO_PROVIDER <span class='tag bg-blue'>普通权限</span></span><span style='display:inline-block; margin:2px; padding:2px 5px; border:1px solid #ddd; border-radius:3px; font-size:12px; color: #7f8c8d;'>android.permission.CREDENTIAL_MANAGER_QUERY_CANDIDATE_CREDENTIALS <span class='tag bg-blue'>普通权限</span></span></div>
+                    
+                </div>
+
+                <div class="card">
+                    <h2>🕸️ 2. 动态数据流向图谱 (Dynamic Data Flow)</h2>
+                    <p style="font-size:13px; color:gray;">基于 Frida Hook 与网络抓包生成的实时数据流向拓扑。</p>
+                    <div id="graph-container"></div>
+                </div>
+
+                <div class="card">
+                    <h2>📡 3. 隐私数据传输详情 (0)</h2>
+                    <p>✅ 未检测到敏感数据网络传输</p>
+                </div>
+
+                <div class="card">
+                    <h2>📝 4. Logcat 敏感日志 (2)</h2>
+                    <ul>
+                    <li><span class='tag bg-blue'>Email</span> <code>haowenyang22@gmail.com</code><br><small style='color:gray'>I/[LOG_MODULE]: Saving user alias: [haowenyang22@gmail.com]</small></li><li><span class='tag bg-blue'>Email</span> <code>haowenyang22@gmail.com</code><br><small style='color:gray'>I/[LOG_MODULE]: Saved user alias successfully: [haowenyang22@gmail.com]</small></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            
+            <script>
+                var chart = echarts.init(document.getElementById('graph-container'));
+                var graphData = {"nodes": [{"name": "Target App", "category": "App", "value": 20, "symbolSize": 60, "itemStyle": {"color": "#2ecc71"}}, {"name": "Logcat:Email", "category": "Logcat", "value": 10, "symbolSize": 40, "itemStyle": {"color": "#1abc9c"}}, {"name": "haowenyang22@gm", "category": "Data", "value": 8, "symbolSize": 36, "itemStyle": {"color": "#e74c3c"}}], "links": [{"source": "Target App", "target": "Logcat:Email"}, {"source": "Logcat:Email", "target": "haowenyang22@gm"}, {"source": "Target App", "target": "Logcat:Email"}, {"source": "Logcat:Email", "target": "haowenyang22@gm"}]};
+                
+                var option = {
+                    title: { text: '隐私数据溯源图谱', top: 'bottom', left: 'right' },
+                    tooltip: {},
+                    legend: [{ data: ['App', 'API', 'SDK', 'Data', 'Network', 'Logcat'] }],
+                    series: [{
+                        type: 'graph',
+                        layout: 'force',
+                        animation: false,
+                        label: { show: true, position: 'right', formatter: '{b}' },
+                        draggable: true,
+                        data: graphData.nodes.map(function (node) {
+                            return {
+                                name: node.name,
+                                value: node.value,
+                                symbolSize: node.symbolSize,
+                                itemStyle: node.itemStyle,
+                                category: ['App', 'API', 'SDK', 'Data', 'Network', 'Logcat'].indexOf(node.category)
+                            };
+                        }),
+                        categories: [
+                            { name: 'App' }, { name: 'API' }, { name: 'SDK' }, { name: 'Data' }, { name: 'Network' }, { name: 'Logcat' }
+                        ],
+                        force: {
+                            edgeLength: 120,
+                            repulsion: 400,
+                            gravity: 0.1
+                        },
+                        edges: graphData.links
+                    }]
+                };
+                chart.setOption(option);
+                window.onresize = function() { chart.resize(); };
+            </script>
+        </body>
+        </html>
+        

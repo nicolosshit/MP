@@ -1,0 +1,31 @@
+{
+  "device": {
+    "device_id": "auto",
+    "adb_path": "adb"
+  },
+  "app": {
+    "package_name": "com.example.app",
+    "apk_path": "path/to/app.apk"
+  },
+  "frida": {
+    "hook_scripts": [
+      "config/frida_hooks.js",
+      "src/instrumentation/ssl_unpinning.js"
+    ],
+    "timeout": 300
+  },
+  "mitmproxy": {
+    "port": 8080,
+    "addon": "src/network/mitm_addon.py",
+    "ssl_insecure": true
+  },
+  "appium": {
+    "enabled": true,
+    "caps_file": "config/appium_caps.json",
+    "random_walk_duration": 300
+  },
+  "report": {
+    "output_dir": "data/reports",
+    "format": "json"
+  }
+}

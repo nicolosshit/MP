@@ -1,0 +1,10 @@
+# Mitmproxy 配置文件
+
+# 禁用全局连接阻止，允许来自外部网络的连接
+block_global: false
+
+# 监听所有网络接口
+listen_host: 0.0.0.0
+
+# 监听端口
+listen_port: 8080

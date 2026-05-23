@@ -1,0 +1,2 @@
+{"type": "LOGCAT_LEAK", "category": "Email", "data": "haowenyang22@gmail.com", "raw_log": "I/[LOG_MODULE]: Saving user alias: [haowenyang22@gmail.com]", "timestamp": "21:41:22"}
+{"type": "LOGCAT_LEAK", "category": "Email", "data": "haowenyang22@gmail.com", "raw_log": "I/[LOG_MODULE]: Saved user alias successfully: [haowenyang22@gmail.com]", "timestamp": "21:41:22"}

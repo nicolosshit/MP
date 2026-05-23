@@ -1,0 +1,10 @@
+{
+  "platformName": "Android",
+  "automationName": "UiAutomator2",
+  "deviceName": "Android Device",
+  "noReset": true,
+  "fullReset": false,
+  "newCommandTimeout": 600,
+  "appPackage": "com.example.app",
+  "appActivity": ".MainActivity"
+}
